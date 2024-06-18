@@ -22,7 +22,7 @@ Devyn and Hayden's Food app
     To run the program.
 
 
-### Marco this is how to test code using our virtual environment
+### Virtual environment setup
     Old version:
         venv/bin/python3.10 <example.py>
     Better version:
