@@ -1,0 +1,14 @@
+START TRANSACTION;
+    SELECT @recipeID:= COUNT(*)+1 FROM recipes;
+    INSERT INTO recipes (recipeName, userID) 
+    VALUES ('asdf', 1);
+    INSERT INTO instructions (instructionText, sourceURL, recipeID) 
+    VALUES ('asdfasd', 'sa', @recipeID);
+    
+    COMMIT;
+    SELECT * FROM stores;
+
+
+DROP DATABASE foodprojectdb;
+CREATE DATABASE foodprojectdb;
+USE foodprojectdb;

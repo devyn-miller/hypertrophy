@@ -1,0 +1,273 @@
+{
+    "template1": {
+        "recipe": "",
+        "ingredients": [
+            {
+                "name": "",
+                "amount": "",
+                "reference": ""
+            },
+            {
+                "name": "",
+                "amount": "",
+                "reference": ""
+            }
+        ]
+
+    },
+    "template2": {
+        "link": "",
+        "notes": "",
+        "ingredients": [
+            {
+                "name": "",
+                "amount": "",
+                "reference": ""
+            },
+            {
+                "name": "",
+                "amount": "",
+                "reference": ""
+            }
+        ]
+    },
+
+
+    
+    "oven bourgers": {
+        "link": "https://fantabulosity.com/hamburgers-in-the-oven/",
+        "notes": "Scape fat off top and sides.",
+        "ingredients": [
+            {
+                "name": "burger paddies",
+                "amount": "2",
+                "reference": "Costco"
+            },
+            {
+                "name": "burger buns",
+                "amount": "1 pair",
+                "reference": "Costco"
+            },
+            {
+                "name": "Salt",
+                "amount": "Yes",
+                "reference": "https://www.ralphs.com/p/kroger-salt-pepper-shakers/0001111071352?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "Pepper",
+                "amount": "Yes",
+                "reference": "https://www.ralphs.com/p/kroger-salt-pepper-shakers/0001111071352?fulfillment=PICKUP&searchType=default_search"
+            }
+        ]
+    },
+    "prerie fire": {
+        "recipe": "Browning. Simmering. Melting.\nFirst brown the ground beef. Drain the fat.\nSimmer the browned/drained beef with tomato paste and sauce and chili seasoning (don't add water) for 10 minutes.\nThen take off heat/super low heat to melt Velveeta and green chilis.\nStir during all steps.",
+        "ingredients": [
+            {
+                "name": "oven browned ground beef",
+                "amount": "2 lbs",
+                "reference": "recipes"
+            },
+            {
+                "name": "chile seasoning",
+                "amount": "2 packets",
+                "reference": "https://www.ralphs.com/p/mccormick-original-chili-seasoning-mix/0005210009150?fulfillment=IN_STORE&searchType=default_search"
+            },
+            {
+                "name": "velveeta cheese",
+                "amount": "32 oz box",
+                "reference": "https://www.ralphs.com/p/velveeta-classic-size-original-cheese-block/0002100061161?fulfillment=PICKUP&searchType=suggestions"
+            },
+            {
+                "name": "diced green chilis",
+                "amount": "small can?",
+                "reference": "https://www.ralphs.com/p/ortega-fire-roasted-mild-diced-green-chiles/0003900001021?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "tomato sauce",
+                "amount": "16 oz",
+                "reference": "https://www.ralphs.com/p/hunt-s-tomato-sauce/0002700039023?fulfillment=IN_STORE&searchType=default_search"
+            },
+            {
+                "name": "tomato paste",
+                "amount": "8 oz",
+                "reference": "https://www.ralphs.com/p/hunt-s-tomato-paste/0002700038815?fulfillment=PICKUP&searchType=default_search"
+            }
+        ]
+    },
+    "pumpkin bread": {
+        "recipe": "Mix until smooth.\nBake for 1 hour at 350 degrees",
+        "ingredients": [
+            {
+                "name": "flour",
+                "amount": "1+2/3 cup",
+                "reference": "https://www.ralphs.com/p/kroger-bleached-all-purpose-enriched-flour/0001111085402?fulfillment=IN_STORE&searchType=default_search"
+            },
+            {
+                "name": "baking soda",
+                "amount": "1 tsp",
+                "reference": "https://www.ralphs.com/p/arm-hammer-pure-baking-soda/0003320001110?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "baking powder",
+                "amount": "1/4 tsp",
+                "reference": "https://www.ralphs.com/p/kroger-baking-powder/0001111090765?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "salt",
+                "amount": "3/4 tsp",
+                "reference": "https://www.ralphs.com/p/morton-plain-salt/0002460001001?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "cloves",
+                "amount": "1/2 tsp",
+                "reference": "https://www.ralphs.com/p/kroger-ground-cloves/0001111001583?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "nutmeg",
+                "amount": "1/2 tsp",
+                "reference": "https://www.ralphs.com/p/kroger-ground-nutmeg/0001111001055?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "cinnamon",
+                "amount": "1/2 tsp",
+                "reference": "https://www.ralphs.com/p/private-selection-ground-cinnamon/0001111072972?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "sugar",
+                "amount": "1+1/2 tsp",
+                "reference": "https://www.ralphs.com/p/smidge-and-spoon-granulated-sugar/0001111083805?fulfillment=IN_STORE&searchType=default_search"
+            },
+            {
+                "name": "salad oil",
+                "amount": "1/2 cup",
+                "reference": "https://www.ralphs.com/p/kroger-pure-canola-oil/0001111085634?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "water",
+                "amount": "1/2 cup",
+                "reference": "sink"
+            },
+            {
+                "name": "pumpkin",
+                "amount": "1 cup",
+                "reference": "https://www.ralphs.com/p/libby-s-100-pure-canned-pumpkin-puree/0003900004504?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "eggs",
+                "amount": "2 large eggs",
+                "reference": "https://www.ralphs.com/p/kroger-cage-free-large-white-eggs/0001111090406?fulfillment=PICKUP&searchType=default_search"
+            }
+        ]
+
+    },
+    "oven browned ground beef": {
+        "link": "https://www.bhg.com/recipes/beef/how-to-brown-ground-beef/",
+        "notes": "Add salt and pepper to first side.  No salt or pepper for other recipes.",
+        "ingredients": [
+            {
+                "name": "Ground Beef",
+                "amount": "1-2 pounds",
+                "reference": "https://www.ralphs.com/p/laura-s-lean-beef-96-lean-all-natural-ground-beef/0061266931706?fulfillment=IN_STORE&searchType=default_search"
+            },
+            {
+                "name": "Salt",
+                "amount": "Yes",
+                "reference": "https://www.ralphs.com/p/kroger-salt-pepper-shakers/0001111071352?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "Pepper",
+                "amount": "Yes",
+                "reference": "https://www.ralphs.com/p/kroger-salt-pepper-shakers/0001111071352?fulfillment=PICKUP&searchType=default_search"
+            }
+        ]
+    },
+    "vanilla milkshake": {
+        "link": "https://www.dessertfortwo.com/milkshakes-how-to-make/",
+        "notes": "I do four scoops because I am a child.",
+        "ingredients": [
+            {
+                "name": "Vanilla Ice Cream",
+                "amount": "3-4 scoops",
+                "reference": "https://www.ralphs.com/p/kroger-deluxe-family-size-vanilla-ice-cream/0001111010960?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "Milk",
+                "amount": "1/2-1 cup",
+                "reference": "https://www.ralphs.com/p/ralphs-2-reduced-fat-milk/0001111041375?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "Mass Gainer",
+                "amount": "1 cup",
+                "reference": "https://www.amazon.com/dp/B0015R6ZPQ/ref=twister_B097NR6HCZ?_encoding=UTF8&th=1"
+            }
+        ]
+    },
+    "cane's sause":{
+        "link": "https://www.thekitchn.com/canes-sauce-recipe-23280925",
+        "notes": "Leave in fridge for AT LEAST 24 hours.",
+        "ingredients": [
+            {
+                "name": "mayonnaise",
+                "amount": "1/2 cup",
+                "reference": "https://www.ralphs.com/p/best-foods-real-mayo-squeeze-bottle-real-mayonnaise/0004800135449?fulfillment=PICKUP&searchType=suggestions"
+            },
+            {
+                "name": "ketchup",
+                "amount": "1/4 cup",
+                "reference": "https://www.ralphs.com/p/heinz-tomato-ketchup-with-no-sugar-added/0001300001110?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "pepper",
+                "amount": "1 tsp",
+                "reference": "https://www.ralphs.com/p/kroger-salt-pepper-shakers/0001111071352?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "garlic powder",
+                "amount": "1/2 tsp",
+                "reference": "https://www.ralphs.com/p/kroger-garlic-powder-with-parsley/0001111000338?fulfillment=IN_STORE&searchType=default_search"
+            },
+            {
+                "name": "worcestershire sauce",
+                "amount": "1/4 tsp",
+                "reference": "https://www.ralphs.com/p/lea-perrins-the-original-worcestershire-sauce/0005160000001?fulfillment=PICKUP&searchType=default_search"
+            }
+        ]
+    },
+    "chicken tenders": {
+        "link": "https://www.bettycrocker.com/recipes/tennessee-hot-fried-chicken-tenders/dfd3f2f5-8e1b-4cb7-9d87-61008ffa23a3",
+        "notes": "Fuck the extra shit.  Also cook until done.",
+        "ingredients": [
+            {
+                "name": "flour",
+                "amount": "1 cup",
+                "reference": "https://www.ralphs.com/p/gold-medal-all-purpose-flour/0001600010710?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "chicken",
+                "amount": "1 to 1/2 breasts",
+                "reference": "https://www.ralphs.com/p/simple-truth-boneless-skinless-natural-chicken-breasts/0020094700000?fulfillment=IN_STORE&searchType=default_search"
+            },
+            {
+                "name": "salt",
+                "amount": "1 tsp",
+                "reference": "https://www.ralphs.com/p/kroger-salt-pepper-shakers/0001111071352?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "pepper",
+                "amount": "1/2 tsp",
+                "reference": "https://www.ralphs.com/p/kroger-salt-pepper-shakers/0001111071352?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "buttermilk",
+                "amount": "1/2 cup",
+                "reference": "https://www.ralphs.com/p/knudson-2-milkfat-buttermilk/0004990027268?fulfillment=PICKUP&searchType=default_search"
+            },
+            {
+                "name": "vegetable oil",
+                "amount": "2 cups",
+                "reference": "https://www.ralphs.com/p/kroger-pure-vegetable-oil/0001111085605?fulfillment=PICKUP&searchType=default_search"
+            }
+        ]
+    }
+}

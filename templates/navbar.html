@@ -1,0 +1,62 @@
+{% block footer %}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="/">FoodProject</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form action="/nav" method="POST">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-info active" style="background-color: white;"
+                                name="nav-recipe" type="submit">All Recipes</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-info active" style="background-color: white;"
+                                name="nav-create" type="submit">Create Recipe</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-info active" style="background-color: white;" name="nav-food"
+                                type="submit">All Food</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-info active" style="background-color: white;"
+                                name="nav-addfood" type="submit">Add Food</button>
+                        </li>
+                    </ul>
+                </ul>
+            </form>
+        </div>
+        {% if globals['currentName'] != None %}
+        <ul class="navbar-nav justify-content-end">
+            <form action="/signout" method="POST">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary disabled" style="background-color: transparent; border-color: transparent;"
+                            type="text">Hello, {{globals['currentName']}}!</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-info active" style="background-color: white; float: right;"
+                            name="nav-addfood" type="submit">Sign Out</button>
+                    </li>
+                </ul>
+            </form>
+        </ul>
+        {% else %}
+        <form action="/signin" method="POST">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <button class="btn btn-outline-info active" style="background-color: white; float: right;"
+                        name="nav-addfood" type="submit">Sign In</button>
+                </li>
+            </ul>
+        </form>
+        {% endif %}
+    </div>
+</nav>
+{% endblock %}
