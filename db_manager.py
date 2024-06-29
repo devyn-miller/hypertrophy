@@ -1,5 +1,7 @@
 import mysql.connector
 import create_table as ct
+import requests
+from mysql.connector import Error
 
 mydb = mysql.connector.connect(
   host="localhost",
@@ -377,5 +379,50 @@ def getFoodList(recipeID):
     print()
     return result
 
+def fetch_usda_food_data(api_key, query):
+    """Fetch food data from USDA FoodData Central API."""
+    url = f"https://api.nal.usda.gov/fdc/v1/foods/search?api_key={api_key}&query={query}"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raises an HTTPError for bad responses
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Request failed: {e}")
+        return None
+
+def add_usda_food_to_database(food_data):
+    """Process and add fetched USDA food data to the database."""
+    for item in food_data['foods']:
+        food_name = item['description']
+        nutrients = {nutrient['nutrientName']: nutrient['value'] for nutrient in item['foodNutrients']}
+        
+        # Example nutrient mapping (adjust according to your database schema)
+        nutrient_mapping = {
+            'Protein': nutrients.get('Protein', 0),
+            'Total lipid (fat)': nutrients.get('Total lipid (fat)', 0),
+            'Carbohydrate, by difference': nutrients.get('Carbohydrate, by difference', 0),
+            'Energy': nutrients.get('Energy', 0),
+            'Sugars, total including NLEA': nutrients.get('Sugars, total including NLEA', 0),
+            'Fiber, total dietary': nutrients.get('Fiber, total dietary', 0),
+            'Calcium, Ca': nutrients.get('Calcium, Ca', 0),
+            'Iron, Fe': nutrients.get('Iron, Fe', 0),
+            'Sodium, Na': nutrients.get('Sodium, Na', 0),
+            'Vitamin C, total ascorbic acid': nutrients.get('Vitamin C, total ascorbic acid', 0),
+            'Vitamin A, IU': nutrients.get('Vitamin A, IU', 0)
+        }
+        
+        try:
+            # Assuming you have a function to insert foods, which you might need to modify or create
+            insertFood(food_name, nutrient_mapping)  # You'll need to adapt this part to match your database schema
+        except Error as e:
+            print(f"Database error: {e}")
+            continue
+
+# Example usage
+api_key = 'YOUR_USDA_API_KEY'
+food_query = 'apple'
+food_data = fetch_usda_food_data(api_key, food_query)
+if food_data:
+    add_usda_food_to_database(food_data)
 
 #mydb.close()
