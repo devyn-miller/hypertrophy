@@ -4,7 +4,7 @@ import create_table as ct
 mydb = mysql.connector.connect(
   host="localhost",
   user="food",
-  password="p@$$w0rd",
+  password="P@ssw0rd",
   database="foodprojectdb",
   auth_plugin='mysql_native_password'
 )
