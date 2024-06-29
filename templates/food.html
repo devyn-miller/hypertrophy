@@ -55,6 +55,9 @@
           <th scope="col">#</th>
           <th scope="col">Food Name</th>
           <th scope="col">Location</th>
+          <th scope="col">User Notes</th>
+          <th scope="col">Protein</th>
+          <!-- Add other nutrients as needed -->
         </tr>
       </thead>
       <tbody>
@@ -63,12 +66,11 @@
         {% set count.value = count.value + 1 %}
         <tr>
           <td scope="row">{{count.value}}</td>
-          <td>{{row[0]}}</td>
-          {% if row[1]==1 %}
-          <td>Amazon Fresh</td>
-          {% else %}
-          <td>Ralphs</td>
-          {% endif %}
+          <td>{{row.food_name}}</td>
+          <td>{{row.location}}</td>
+          <td>{{row.user_notes}}</td>
+          <td>{{row.nutrition_facts.protein}}</td>
+          <!-- Display other nutrients similarly -->
         </tr>
         {% endfor %}
       </tbody>
