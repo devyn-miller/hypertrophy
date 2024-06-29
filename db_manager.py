@@ -22,6 +22,65 @@ def createTables():
     mycursor.execute(ct.food_in_recipe_table)
     mycursor.execute(ct.instruction_table)
     mycursor.execute(ct.store_table)
+    createNutritionTables()
+
+def createNutritionTables():
+    mycursor.execute("""
+        CREATE TABLE IF NOT EXISTS nutrition_facts (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            food_id INT,
+            measurement_unit VARCHAR(10) DEFAULT '100g',
+            water DECIMAL(5,2),
+            energy_general DECIMAL(5,2),
+            energy_specific DECIMAL(5,2),
+            nitrogen DECIMAL(5,2),
+            protein DECIMAL(5,2),
+            total_lipid DECIMAL(5,2),
+            ash DECIMAL(5,2),
+            carbohydrate_by_difference DECIMAL(5,2),
+            carbohydrate_by_summation DECIMAL(5,2),
+            fiber_total_dietary DECIMAL(5,2),
+            sugars_total DECIMAL(5,2),
+            sucrose DECIMAL(5,2),
+            glucose DECIMAL(5,2),
+            fructose DECIMAL(5,2),
+            lactose DECIMAL(5,2),
+            maltose DECIMAL(5,2),
+            galactose DECIMAL(5,2),
+            starch DECIMAL(5,2),
+            citric_acid DECIMAL(5,2),
+            malic_acid DECIMAL(5,2),
+            vitamin_c DECIMAL(5,2),
+            thiamin DECIMAL(5,2),
+            riboflavin DECIMAL(5,2),
+            niacin DECIMAL(5,2),
+            vitamin_b6 DECIMAL(5,2),
+            biotin DECIMAL(5,2),
+            folate_total DECIMAL(5,2),
+            vitamin_a_rae DECIMAL(5,2),
+            carotene_beta DECIMAL(5,2),
+            cis_beta_carotene DECIMAL(5,2),
+            trans_beta_carotene DECIMAL(5,2),
+            carotene_alpha DECIMAL(5,2),
+            cryptoxanthin_beta DECIMAL(5,2),
+            cryptoxanthin_alpha DECIMAL(5,2),
+            cis_lycopene DECIMAL(5,2),
+            trans_lycopene DECIMAL(5,2),
+            cis_lutein_zeaxanthin DECIMAL(5,2),
+            trans_lutein_zeaxanthin DECIMAL(5,2),
+            vitamin_k_phylloquinone DECIMAL(5,2),
+            vitamin_k_dihydrophylloquinone DECIMAL(5,2),
+            vitamin_k_menaquinone DECIMAL(5,2),
+            FOREIGN KEY (food_id) REFERENCES foods(id)
+        );
+    """)
+
+def insertNutritionData(food_id, nutrition_data):
+    placeholders = ', '.join(['%s'] * len(nutrition_data))
+    columns = ', '.join(nutrition_data.keys())
+    sql = "INSERT INTO nutrition_facts (food_id, {}) VALUES (%s, {})".format(columns, placeholders)
+    mycursor.execute(sql, [food_id] + list(nutrition_data.values()))
+    mydb.commit()
 
 def tableCheck():
     tablesExist = False
