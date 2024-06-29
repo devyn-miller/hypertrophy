@@ -40,47 +40,186 @@
             <textarea name="user_notes" class="form-control" id="userNotes"></textarea>
         </div>
 
+        <!-- Measurement Unit Dropdown -->
         <div class="mb-3">
-            <label for="water" class="form-label">Water (per 100g)</label>
+            <label for="unit" class="form-label">Measurement Unit</label>
+            <select name="unit" class="form-select" id="unit">
+                <option value="grams">Grams</option>
+                <option value="oz">Ounces</option>
+                <option value="cups">Cups</option>
+            </select>
+        </div>
+
+        <!-- Nutritional Components -->
+        <div class="mb-3">
+            <label for="water" class="form-label">Water (per unit)</label>
             <input name="nutrition_facts[water]" type="number" step="0.01" class="form-control" id="water">
         </div>
         <div class="mb-3">
-            <label for="energy_general" class="form-label">Energy (general, per 100g)</label>
-            <input name="nutrition_facts[energy_general]" type="number" step="0.01" class="form-control" id="energy_general">
+            <label for="energy_atwater_general" class="form-label">Energy (Atwater General Factors) (per unit)</label>
+            <input name="nutrition_facts[energy_atwater_general]" type="number" step="0.01" class="form-control" id="energy_atwater_general">
         </div>
         <div class="mb-3">
-            <label for="energy_specific" class="form-label">Energy (specific, per 100g)</label>
-            <input name="nutrition_facts[energy_specific]" type="number" step="0.01" class="form-control" id="energy_specific">
+            <label for="energy_atwater_specific" class="form-label">Energy (Atwater Specific Factors) (per unit)</label>
+            <input name="nutrition_facts[energy_atwater_specific]" type="number" step="0.01" class="form-control" id="energy_atwater_specific">
         </div>
         <div class="mb-3">
-            <label for="protein" class="form-label">Protein (per 100g)</label>
+            <label for="protein" class="form-label">Protein (per unit)</label>
             <input name="nutrition_facts[protein]" type="number" step="0.01" class="form-control" id="protein">
         </div>
         <div class="mb-3">
-            <label for="total_lipid" class="form-label">Total Lipid (Fat, per 100g)</label>
+            <label for="nitrogen" class="form-label">Nitrogen (per unit)</label>
+            <input name="nutrition_facts[nitrogen]" type="number" step="0.01" class="form-control" id="nitrogen">
+        </div>
+        <div class="mb-3">
+            <label for="total_lipid" class="form-label">Total lipid (fat) (per unit)</label>
             <input name="nutrition_facts[total_lipid]" type="number" step="0.01" class="form-control" id="total_lipid">
         </div>
         <div class="mb-3">
-            <label for="carbohydrate_by_difference" class="form-label">Carbohydrate (by difference, per 100g)</label>
-            <input name="nutrition_facts[carbohydrate_by_difference]" type="number" step="0.01" class="form-control" id="carbohydrate_by_difference">
+            <label for="ash" class="form-label">Ash (per unit)</label>
+            <input name="nutrition_facts[ash]" type="number" step="0.01" class="form-control" id="ash">
         </div>
         <div class="mb-3">
-            <label for="fiber_total_dietary" class="form-label">Fiber (total dietary, per 100g)</label>
+            <label for="carbohydrate_difference" class="form-label">Carbohydrate, by difference (per unit)</label>
+            <input name="nutrition_facts[carbohydrate_difference]" type="number" step="0.01" class="form-control" id="carbohydrate_difference">
+        </div>
+        <div class="mb-3">
+            <label for="carbohydrate_summation" class="form-label">Carbohydrate, by summation (per unit)</label>
+            <input name="nutrition_facts[carbohydrate_summation]" type="number" step="0.01" class="form-control" id="carbohydrate_summation">
+        </div>
+        <div class="mb-3">
+            <label for="fiber_total_dietary" class="form-label">Fiber, total dietary (per unit)</label>
             <input name="nutrition_facts[fiber_total_dietary]" type="number" step="0.01" class="form-control" id="fiber_total_dietary">
         </div>
         <div class="mb-3">
-            <label for="sugars_total" class="form-label">Sugars (total, per 100g)</label>
+            <label for="total_dietary_fiber_aoac" class="form-label">Total dietary fiber (AOAC 2011.25) (per unit)</label>
+            <input name="nutrition_facts[total_dietary_fiber_aoac]" type="number" step="0.01" class="form-control" id="total_dietary_fiber_aoac">
+        </div>
+        <div class="mb-3">
+            <label for="sugars_total" class="form-label">Sugars, total (per unit)</label>
             <input name="nutrition_facts[sugars_total]" type="number" step="0.01" class="form-control" id="sugars_total">
         </div>
         <div class="mb-3">
-            <label for="vitamin_c" class="form-label">Vitamin C (per 100g)</label>
+            <label for="sucrose" class="form-label">Sucrose (per unit)</label>
+            <input name="nutrition_facts[sucrose]" type="number" step="0.01" class="form-control" id="sucrose">
+        </div>
+        <div class="mb-3">
+            <label for="glucose" class="form-label">Glucose (per unit)</label>
+            <input name="nutrition_facts[glucose]" type="number" step="0.01" class="form-control" id="glucose">
+        </div>
+        <div class="mb-3">
+            <label for="fructose" class="form-label">Fructose (per unit)</label>
+            <input name="nutrition_facts[fructose]" type="number" step="0.01" class="form-control" id="fructose">
+        </div>
+        <div class="mb-3">
+            <label for="lactose" class="form-label">Lactose (per unit)</label>
+            <input name="nutrition_facts[lactose]" type="number" step="0.01" class="form-control" id="lactose">
+        </div>
+        <div class="mb-3">
+            <label for="maltose" class="form-label">Maltose (per unit)</label>
+            <input name="nutrition_facts[maltose]" type="number" step="0.01" class="form-control" id="maltose">
+        </div>
+        <div class="mb-3">
+            <label for="galactose" class="form-label">Galactose (per unit)</label>
+            <input name="nutrition_facts[galactose]" type="number" step="0.01" class="form-control" id="galactose">
+        </div>
+        <div class="mb-3">
+            <label for="starch" class="form-label">Starch (per unit)</label>
+            <input name="nutrition_facts[starch]" type="number" step="0.01" class="form-control" id="starch">
+        </div>
+        <div class="mb-3">
+            <label for="citric_acid" class="form-label">Citric acid (per unit)</label>
+            <input name="nutrition_facts[citric_acid]" type="number" step="0.01" class="form-control" id="citric_acid">
+        </div>
+        <div class="mb-3">
+            <label for="malic_acid" class="form-label">Malic acid (per unit)</label>
+            <input name="nutrition_facts[malic_acid]" type="number" step="0.01" class="form-control" id="malic_acid">
+        </div>
+        <div class="mb-3">
+            <label for="vitamin_c" class="form-label">Vitamin C, total ascorbic acid (per unit)</label>
             <input name="nutrition_facts[vitamin_c]" type="number" step="0.01" class="form-control" id="vitamin_c">
         </div>
         <div class="mb-3">
-            <label for="protein" class="form-label">Protein (per 100g)</label>
-            <input name="nutrition_facts[protein]" type="number" step="0.01" class="form-control" id="protein">
+            <label for="thiamin" class="form-label">Thiamin (per unit)</label>
+            <input name="nutrition_facts[thiamin]" type="number" step="0.01" class="form-control" id="thiamin">
         </div>
-
+        <div class="mb-3">
+            <label for="riboflavin" class="form-label">Riboflavin (per unit)</label>
+            <input name="nutrition_facts[riboflavin]" type="number" step="0.01" class="form-control" id="riboflavin">
+        </div>
+        <div class="mb-3">
+            <label for="niacin" class="form-label">Niacin (per unit)</label>
+            <input name="nutrition_facts[niacin]" type="number" step="0.01" class="form-control" id="niacin">
+        </div>
+        <div class="mb-3">
+            <label for="vitamin_b6" class="form-label">Vitamin B-6 (per unit)</label>
+            <input name="nutrition_facts[vitamin_b6]" type="number" step="0.01" class="form-control" id="vitamin_b6">
+        </div>
+        <div class="mb-3">
+            <label for="biotin" class="form-label">Biotin (per unit)</label>
+            <input name="nutrition_facts[biotin]" type="number" step="0.01" class="form-control" id="biotin">
+        </div>
+        <div class="mb-3">
+            <label for="folate" class="form-label">Folate, total (per unit)</label>
+            <input name="nutrition_facts[folate]" type="number" step="0.01" class="form-control" id="folate">
+        </div>
+        <div class="mb-3">
+            <label for="vitamin_a_rae" class="form-label">Vitamin A, RAE (per unit)</label>
+            <input name="nutrition_facts[vitamin_a_rae]" type="number" step="0.01" class="form-control" id="vitamin_a_rae">
+        </div>
+        <div class="mb-3">
+            <label for="carotene_beta" class="form-label">Carotene, beta (per unit)</label>
+            <input name="nutrition_facts[carotene_beta]" type="number" step="0.01" class="form-control" id="carotene_beta">
+        </div>
+        <div class="mb-3">
+            <label for="cis_beta_carotene" class="form-label">cis-beta-Carotene (per unit)</label>
+            <input name="nutrition_facts[cis_beta_carotene]" type="number" step="0.01" class="form-control" id="cis_beta_carotene">
+        </div>
+        <div class="mb-3">
+            <label for="trans_beta_carotene" class="form-label">trans-beta-Carotene (per unit)</label>
+            <input name="nutrition_facts[trans_beta_carotene]" type="number" step="0.01" class="form-control" id="trans_beta_carotene">
+        </div>
+        <div class="mb-3">
+            <label for="carotene_alpha" class="form-label">Carotene, alpha (per unit)</label>
+            <input name="nutrition_facts[carotene_alpha]" type="number" step="0.01" class="form-control" id="carotene_alpha">
+        </div>
+        <div class="mb-3">
+            <label for="cryptoxanthin_beta" class="form-label">Cryptoxanthin, beta (per unit)</label>
+            <input name="nutrition_facts[cryptoxanthin_beta]" type="number" step="0.01" class="form-control" id="cryptoxanthin_beta">
+        </div>
+        <div class="mb-3">
+            <label for="cryptoxanthin_alpha" class="form-label">Cryptoxanthin, alpha (per unit)</label>
+            <input name="nutrition_facts[cryptoxanthin_alpha]" type="number" step="0.01" class="form-control" id="cryptoxanthin_alpha">
+        </div>
+        <div class="mb-3">
+            <label for="cis_lycopene" class="form-label">cis-Lycopene (per unit)</label>
+            <input name="nutrition_facts[cis_lycopene]" type="number" step="0.01" class="form-control" id="cis_lycopene">
+        </div>
+        <div class="mb-3">
+            <label for="trans_lycopene" class="form-label">trans-Lycopene (per unit)</label>
+            <input name="nutrition_facts[trans_lycopene]" type="number" step="0.01" class="form-control" id="trans_lycopene">
+        </div>
+        <div class="mb-3">
+            <label for="cis_lutein_zeaxanthin" class="form-label">cis-Lutein/Zeaxanthin (per unit)</label>
+            <input name="nutrition_facts[cis_lutein_zeaxanthin]" type="number" step="0.01" class="form-control" id="cis_lutein_zeaxanthin">
+        </div>
+        <div class="mb-3">
+            <label for="trans_lutein_zeaxanthin" class="form-label">trans-Lutein/Zeaxanthin (per unit)</label>
+            <input name="nutrition_facts[trans_lutein_zeaxanthin]" type="number" step="0.01" class="form-control" id="trans_lutein_zeaxanthin">
+        </div>
+        <div class="mb-3">
+            <label for="vitamin_k_phylloquinone" class="form-label">Vitamin K (phylloquinone) (per unit)</label>
+            <input name="nutrition_facts[vitamin_k_phylloquinone]" type="number" step="0.01" class="form-control" id="vitamin_k_phylloquinone">
+        </div>
+        <div class="mb-3">
+            <label for="vitamin_k_dihydrophylloquinone" class="form-label">Vitamin K (dihydrophylloquinone) (per unit)</label>
+            <input name="nutrition_facts[vitamin_k_dihydrophylloquinone]" type="number" step="0.01" class="form-control" id="vitamin_k_dihydrophylloquinone">
+        </div>
+        <div class="mb-3">
+            <label for="vitamin_k_menaquinone4" class="form-label">Vitamin K (menaquinone-4) (per unit)</label>
+            <input name="nutrition_facts[vitamin_k_menaquinone4]" type="number" step="0.01" class="form-control" id="vitamin_k_menaquinone4">
+        </div>
+        
         <br>
         <br>
         <button type="submit" class="btn btn-primary">Add Food</button>
@@ -94,7 +233,6 @@
         <br>
         <button type="button" class="btn btn-danger" disabled>Someone already added this item.</button>
     {% endif %}
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
