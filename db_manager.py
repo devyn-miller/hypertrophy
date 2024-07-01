@@ -379,6 +379,13 @@ def getFoodList(recipeID):
     print()
     return result
 
+def getFoodDetails(foodName):
+    # Use the existing database connection and cursor
+    query = "SELECT * FROM Foods WHERE foodName = %s"
+    mycursor.execute(query, (foodName,))
+    result = mycursor.fetchone()
+    return result
+
 def fetch_usda_food_data(api_key, query):
     """Fetch food data from USDA FoodData Central API."""
     url = f"https://api.nal.usda.gov/fdc/v1/foods/search?api_key={api_key}&query={query}"

@@ -7,6 +7,11 @@
   <title>FoodProject</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <style>
+    .blue-background-class {
+      background-color: #d4e2fc;
+    }
+  </style>
 </head>
 
 <body>
@@ -52,104 +57,24 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Food Name</th>
-          <th scope="col">Location</th>
-          <th scope="col">User Notes</th>
-          <th scope="col">Water</th>
-          <th scope="col">Energy (Atwater General Factors)</th>
-          <th scope="col">Energy (Atwater Specific Factors)</th>
-          <th scope="col">Nitrogen</th>
-          <th scope="col">Protein</th>
-          <th scope="col">Total lipid (fat)</th>
-          <th scope="col">Ash</th>
-          <th scope="col">Carbohydrate, by difference</th>
-          <th scope="col">Carbohydrate, by summation</th>
-          <th scope="col">Fiber, total dietary</th>
-          <th scope="col">Total dietary fiber (AOAC 2011.25)</th>
-          <th scope="col">Sugars, total</th>
-          <th scope="col">Sucrose</th>
-          <th scope="col">Glucose</th>
-          <th scope="col">Fructose</th>
-          <th scope="col">Lactose</th>
-          <th scope="col">Maltose</th>
-          <th scope="col">Galactose</th>
-          <th scope="col">Starch</th>
-          <th scope="col">Citric acid</th>
-          <th scope="col">Malic acid</th>
-          <th scope="col">Vitamin C, total ascorbic acid</th>
-          <th scope="col">Thiamin</th>
-          <th scope="col">Riboflavin</th>
-          <th scope="col">Niacin</th>
-          <th scope="col">Vitamin B-6</th>
-          <th scope="col">Biotin</th>
-          <th scope="col">Folate, total</th>
-          <th scope="col">Vitamin A, RAE</th>
-          <th scope="col">Carotene, beta</th>
-          <th scope="col">cis-beta-Carotene</th>
-          <th scope="col">trans-beta-Carotene</th>
-          <th scope="col">Carotene, alpha</th>
-          <th scope="col">Cryptoxanthin, beta</th>
-          <th scope="col">Cryptoxanthin, alpha</th>
-          <th scope="col">cis-Lycopene</th>
-          <th scope="col">trans-Lycopene</th>
-          <th scope="col">cis-Lutein/Zeaxanthin</th>
-          <th scope="col">trans-Lutein/Zeaxanthin</th>
-          <th scope="col">Vitamin K (phylloquinone)</th>
-          <th scope="col">Vitamin K (dihydrophylloquinone)</th>
-          <th scope="col">Vitamin K (menaquinone-4)</th>
+          <th scope="col">Food Name</th> <!-- Always shown -->
+          {% for nutrient in nutrient_order %}
+            {% if nutrient_preferences[nutrient] %}
+                <th scope="col">{{ nutrient }}</th>
+            {% endif %}
+          {% endfor %}
         </tr>
       </thead>
       <tbody>
-        {% set count = namespace(value=0) %}
-        {% for row in result %}
-        {% set count.value = count.value + 1 %}
+        {% for food in result %}
         <tr>
-          <td scope="row">{{count.value}}</td>
-          <td>{{row.food_name}}</td>
-          <td>{{row.location}}</td>
-          <td>{{row.user_notes}}</td>
-          <td>{{row.nutrition_facts.water}}</td>
-          <td>{{row.nutrition_facts.energy_atwater_general}}</td>
-          <td>{{row.nutrition_facts.energy_atwater_specific}}</td>
-          <td>{{row.nutrition_facts.nitrogen}}</td>
-          <td>{{row.nutrition_facts.protein}}</td>
-          <td>{{row.nutrition_facts.total_lipid}}</td>
-          <td>{{row.nutrition_facts.ash}}</td>
-          <td>{{row.nutrition_facts.carbohydrate_difference}}</td>
-          <td>{{row.nutrition_facts.carbohydrate_summation}}</td>
-          <td>{{row.nutrition_facts.fiber_total_dietary}}</td>
-          <td>{{row.nutrition_facts.total_dietary_fiber_aoac}}</td>
-          <td>{{row.nutrition_facts.sugars_total}}</td>
-          <td>{{row.nutrition_facts.sucrose}}</td>
-          <td>{{row.nutrition_facts.glucose}}</td>
-          <td>{{row.nutrition_facts.fructose}}</td>
-          <td>{{row.nutrition_facts.lactose}}</td>
-          <td>{{row.nutrition_facts.maltose}}</td>
-          <td>{{row.nutrition_facts.galactose}}</td>
-          <td>{{row.nutrition_facts.starch}}</td>
-          <td>{{row.nutrition_facts.citric_acid}}</td>
-          <td>{{row.nutrition_facts.malic_acid}}</td>
-          <td>{{row.nutrition_facts.vitamin_c}}</td>
-          <td>{{row.nutrition_facts.thiamin}}</td>
-          <td>{{row.nutrition_facts.riboflavin}}</td>
-          <td>{{row.nutrition_facts.niacin}}</td>
-          <td>{{row.nutrition_facts.vitamin_b6}}</td>
-          <td>{{row.nutrition_facts.biotin}}</td>
-          <td>{{row.nutrition_facts.folate}}</td>
-          <td>{{row.nutrition_facts.vitamin_a_rae}}</td>
-          <td>{{row.nutrition_facts.carotene_beta}}</td>
-          <td>{{row.nutrition_facts.cis_beta_carotene}}</td>
-          <td>{{row.nutrition_facts.trans_beta_carotene}}</td>
-          <td>{{row.nutrition_facts.carotene_alpha}}</td>
-          <td>{{row.nutrition_facts.cryptoxanthin_beta}}</td>
-          <td>{{row.nutrition_facts.cryptoxanthin_alpha}}</td>
-          <td>{{row.nutrition_facts.cis_lycopene}}</td>
-          <td>{{row.nutrition_facts.trans_lycopene}}</td>
-          <td>{{row.nutrition_facts.cis_lutein_zeaxanthin}}</td>
-          <td>{{row.nutrition_facts.trans_lutein_zeaxanthin}}</td>
-          <td>{{row.nutrition_facts.vitamin_k_phylloquinone}}</td>
-          <td>{{row.nutrition_facts.vitamin_k_dihydrophylloquinone}}</td>
-          <td>{{row.nutrition_facts.vitamin_k_menaquinone_4}}</td>
+          <td>{{ loop.index }}</td>
+          <td>{{ food.food_name }}</td> <!-- Always shown -->
+          {% for nutrient in nutrient_order %}
+            {% if nutrient_preferences[nutrient] %}
+                <td>{{ food[nutrient] }}</td>
+            {% endif %}
+          {% endfor %}
         </tr>
         {% endfor %}
       </tbody>
@@ -159,6 +84,52 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const saveButton = document.getElementById('save-settings');
+      saveButton.addEventListener('click', function() {
+        const columnPreferences = {};
+        document.querySelectorAll('.column-toggle').forEach(checkbox => {
+          columnPreferences[checkbox.dataset.column] = checkbox.checked;
+        });
+
+        const columnOrder = [];
+        document.querySelectorAll('th').forEach(header => {
+          if (header.style.display !== 'none') {
+            columnOrder.push(header.innerText);
+          }
+        });
+
+        fetch('/save-column-settings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ columnPreferences, columnOrder }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      });
+
+      const checkboxes = document.querySelectorAll('.nutrient-toggle');
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          const nutrient = this.getAttribute('data-nutrient');
+          const cells = document.querySelectorAll(`.${nutrient}`);
+          cells.forEach(cell => {
+            cell.style.display = this.checked ? '' : 'none';
+          });
+        });
+      });
+
+      // Add drag-and-drop functionality here using a library like SortableJS
+    });
+  </script>
 </body>
 
 </html>

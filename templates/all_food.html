@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Foods</title>
+</head>
+<body>
+    <h1>All Foods</h1>
+    <ul>
+        {% for food in foods %}
+            <li>{{ food.food_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

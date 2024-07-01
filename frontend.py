@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import db_manager as db
 
 app = Flask("FoodProject")
@@ -257,11 +257,28 @@ def addfood():
             query = db.queryFoodsCount(foodName, int(storeID))
             if query == 0:
                 db.insertFood(foodName=foodName, storeID=int(storeID))
-                return redirect(url_for('food'))
+                return redirect(url_for('add_food_success', foodName=foodName))
             return render_template("addfood.html", globals=globals, empty=False, alreadyadded=True)
         return render_template("addfood.html", globals=globals, empty=True, alreadyadded=False)
 
     return render_template("addfood.html", globals=globals, empty=False, alreadyadded=False)
+
+
+@app.route("/add-food-success/<foodName>")
+def add_food_success(foodName):
+    food_details = db.getFoodDetails(foodName)
+    return render_template("add_food_success.html", food=food_details)
+
+
+@app.route("/edit-food/<foodName>", methods=["GET", "POST"])
+def edit_food(foodName):
+    if request.method == "POST":
+        newFoodName = request.form.get("foodname")
+        newStoreID = request.form.get("locationbox")
+        db.updateFood(foodName, newFoodName, newStoreID)
+        return redirect(url_for('food'))
+    food_details = db.getFoodDetails(foodName)
+    return render_template("edit_food.html", food=food_details)
 
 
 @app.route("/food", methods=["GET", "POST"])
@@ -269,22 +286,36 @@ def food():
     global globals
     foodName = ''
     storeID = ''
+    # Initialize nutrient preferences along with column preferences
+    default_nutrients = ["Energy (Atwater General Factors)", "Protein", "Carbohydrate, by difference", "Total lipid (fat)"]
+    nutrient_preferences = request.cookies.get('nutrient_prefs', default=default_nutrients)
+    nutrient_order = request.cookies.get('nutrient_order', default=default_nutrients)
+
     if request.method == "POST":
-        print(request.form)
         foodName = request.form.get("foodbox")
         storeID = request.form.get("locationbox")
 
     count = db.getFoodsCount(foodName=foodName.lower(), storeID=storeID)
     result = db.getFoods(foodName=foodName.lower(), storeID=storeID)
-    print("WEFOIWEJFOIWEJFIWOIEFJ")
-    print(count)
-    print(result)
 
-    for row in result:
-        print(row[1])
+    return render_template("food.html", globals=globals, count=count, result=result, nutrient_preferences=nutrient_preferences, nutrient_order=nutrient_order)
 
-    return render_template("food.html", globals=globals, count=count, result=result)
+
+@app.route('/save-nutrient-settings', methods=['POST'])
+def save_nutrient_settings():
+    data = request.get_json()
+    nutrient_preferences = data['nutrientPreferences']
+    nutrient_order = data['nutrientOrder']
+    # Save these preferences to the database or session
+    return jsonify({'status': 'success'})
+
+
+@app.route("/all-food")
+def all_food():
+    foods = db.getAllFoods()  # Ensure this method fetches all recent entries correctly
+    return render_template("all_food.html", foods=foods)
 
 
 if __name__ == "__main__":
     app.run(debug=True, port=5005)
+
